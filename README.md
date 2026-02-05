@@ -1,27 +1,149 @@
-# Network-Intrusion-Detection-using-Machine-Learning
+# 🛡️ Advanced Network Intrusion Detection System (NIDS)
 
-# Overview
+An **end-to-end Machine Learning–powered Network Intrusion Detection System** built on the **NSL-KDD dataset**, designed to detect malicious network traffic with **high accuracy, calibrated probabilities, and real-time monitoring**.
 
-This project focuses on detecting network intrusions using machine learning techniques. The dataset used has been preprocessed and analyzed to enhance data quality, ensuring optimal model performance. The project implements multiple classification algorithms and evaluates their effectiveness in intrusion.
+This project combines a **high-performance FastAPI backend**, multiple state-of-the-art ML models, **probability calibration**, **concept drift detection**, and a **modern React-based security dashboard** for deep analysis and visualization.
 
-# Features
+---
 
--Preprocessing & Data Analysis: Cleaned and transformed network intrusion data to improve model accuracy.
--Implementation of Multiple Classification Algorithms: Utilized Stochastic Gradient Descent (SGD), Support Vector Machine (SVM), and Decision Tree classifiers to detect network intrusions.
--Performance Evaluation: Compared classification accuracies and optimized parameters to enhance detection rates.
--Visualization & Insights: Includes analysis of results using accuracy, precision, &recall.
+## 🔗 Demo & Access URLs
+
+> ⚠️ Local Deployment (Default)
+
+- **Frontend Dashboard:**  
+  http://localhost:3000
+
+- **Backend API:**  
+  http://localhost:8000
+
+- **Interactive API Docs (Swagger UI):**  
+  http://localhost:8000/docs
+
+---
+
+## 🚀 Key Features
+
+### 🔐 Backend (Intelligence Engine)
+
+- **Multi-Model Architecture**
+  - Decision Tree  
+  - SGD Classifier  
+  - Random Forest  
+  - XGBoost  
+  - LightGBM  
+
+- **Automated Model Optimization**
+  - Integrated `GridSearchCV` and `RandomizedSearchCV`
+  - Model-specific hyperparameter tuning pipelines
+
+- **Probability Calibration**
+  - Uses `CalibratedClassifierCV` with **Isotonic Regression**
+  - Ensures **statistically reliable probability scores**
+  - Enables precise **threshold-based decision making**
+
+- **Concept Drift Detection**
+  - Compares live traffic distributions with training baselines
+  - Detects evolving attack patterns over time
+
+- **Security-Centric Metrics**
+  - False Negative Rate (FNR)
+  - Balanced Accuracy
+  - ROC-AUC
+  - Precision / Recall / F1 Score
+
+- **Robust Data Preprocessing**
+  - Automatic categorical encoding
+  - Feature scaling
+  - Data sanitization and validation
+
+- **High-Performance API**
+  - Built with **FastAPI**
+  - Asynchronous inference endpoints
+  - Low-latency prediction support
+
+---
+
+### 🧭 Frontend (Command Center)
+
+- **Real-Time Training Monitor**
+  - Live model training progress
+  - Hyperparameter tuning & calibration status logs
+
+- **Performance Deep Dive**
+  - Confusion Matrices
+  - ROC Curves
+  - Accuracy, Precision, Recall & F1 comparisons
+  - Radar charts for multi-metric evaluation
+
+- **Security Insights Engine**
+  - Automatically highlights the **most production-ready model**
+  - Recommendations based on security posture (low FNR, high recall)
+
+- **Interactive Prediction Lab**
+  - Drag-and-drop CSV upload
+  - Adjustable classification threshold slider
+  - Attack vs Normal probability histograms
+
+- **Operational Monitoring**
+  - Per-model inference latency (ms)
+  - Feature-level distribution shift tracking
+  - System health indicators
+
+- **Traffic Simulation**
+  - Visual simulation of incoming network packets
+  - Live intrusion detection alerts
+
+---
+
+## 🛠️ Tech Stack
+
+### 🧠 Backend
+- **Language:** Python 3.10+
+- **Framework:** FastAPI
+- **Machine Learning:**  
+  - Scikit-learn  
+  - XGBoost  
+  - LightGBM
+- **Data Processing:** Pandas, NumPy
+- **Model Persistence:** Joblib
+- **Calibration:** CalibratedClassifierCV (Isotonic Regression)
+
+---
+
+### 🖥️ Frontend
+- **Library:** React.js
+- **Visualization:** Recharts
+- **Styling:** Modern Vanilla CSS (Dark Mode + Glassmorphism)
+- **Icons:** Lucide-React
+- **API Client:** Axios
+
+---
+
+## 📄 How to Run the Project
+
+### 🔧 Backend Setup
+```bash
+python -m uvicorn src.api:app --reload
+```
+Backend will now be available at: http://localhost:8000
+
+### 🔧 Frontend Setup
+
+- cd frontend
+- npm install
+- npm start
+
+Frontend will now be available at: http://localhost:3000
+
+# Training Models
+
+- Open the Frontend Dashboard
+- Navigate to Overview
+- Click Train Models
+- Monitor live training, tuning, and calibration progress
 
 # Dataset
 
-The project uses a publicly available network intrusion detection dataset. The dataset is preprocessed to handle missing values, normalize data, and extract relevant features for training machine learning models.
-
-# Machine Learning Models Used
-
--Stochastic Gradient Descent (SGD): An efficient approach for large-scale learning.
--Support Vector Machine (SVM): A robust classifier for high-dimensional data.
--Decision Tree: A simple yet powerful model for classification tasks.
-
-# Results
-
-The project compares different classification models based on their accuracy and other performance metrics.
-
+- NSL-KDD Dataset
+- Widely used benchmark dataset for intrusion detection research
+- Designed to address redundancy and imbalance issues in KDD’99
