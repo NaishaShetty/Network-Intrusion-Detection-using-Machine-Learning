@@ -1,0 +1,65 @@
+# Network Intrusion Detection System Configuration
+
+dataset:
+  name: "KDD Cup 1999"
+  path: "KDDTrain+.txt"
+  test_size: 0.25
+  random_state: 42
+  
+preprocessing:
+  scaling: "standard"  # standard, minmax, robust
+  handle_missing: "drop"  # drop, impute
+  categorical_encoding: "label"  # label, onehot
+  
+models:
+  decision_tree:
+    enabled: true
+    hyperparameters:
+      max_depth: [10, 20, 30, null]
+      min_samples_split: [2, 5, 10]
+      min_samples_leaf: [1, 2, 4]
+      criterion: ["gini", "entropy"]
+    
+  sgd:
+    enabled: true
+    hyperparameters:
+      loss: ["hinge", "log_loss", "modified_huber"]
+      penalty: ["l2", "l1", "elasticnet"]
+      alpha: [0.0001, 0.001, 0.01]
+      max_iter: [1000, 2000]
+  
+  random_forest:
+    enabled: true
+    hyperparameters:
+      n_estimators: [100, 200, 300]
+      max_depth: [10, 20, 30]
+      min_samples_split: [2, 5]
+      min_samples_leaf: [1, 2]
+  
+  xgboost:
+    enabled: true
+    hyperparameters:
+      n_estimators: [100, 200]
+      max_depth: [6, 10, 15]
+      learning_rate: [0.01, 0.1, 0.3]
+      subsample: [0.8, 1.0]
+  
+  lightgbm:
+    enabled: true
+    hyperparameters:
+      n_estimators: [100, 200]
+      max_depth: [10, 20]
+      learning_rate: [0.01, 0.1]
+      num_leaves: [31, 50]
+
+training:
+  cv_folds: 5
+  scoring: "accuracy"
+  n_jobs: -1
+  verbose: 1
+  
+visualization:
+  save_plots: true
+  plot_format: "png"
+  dpi: 300
+  style: "seaborn-v0_8-darkgrid"

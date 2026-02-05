@@ -1,0 +1,85 @@
+/* Insights.css Overhaul */
+
+.recommendation-hero {
+    background: linear-gradient(135deg, rgba(16, 185, 129, 0.1), rgba(6, 182, 212, 0.05));
+    border: 1px solid rgba(16, 185, 129, 0.3);
+    padding: 2rem;
+}
+
+.hero-header {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+    margin-bottom: 2rem;
+}
+
+.hero-header h2 {
+    font-size: 1.5rem;
+    color: #f8fafc;
+}
+
+.hero-header p {
+    color: #94a3b8;
+}
+
+.recommendation-content {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 1.5rem;
+}
+
+.rec-box {
+    display: flex;
+    gap: 1rem;
+    padding: 1.5rem;
+    border-radius: 12px;
+    background: rgba(15, 23, 42, 0.4);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.rec-box h4 {
+    margin-bottom: 0.5rem;
+    color: #f1f5f9;
+}
+
+.rec-box p {
+    font-size: 0.9rem;
+    line-height: 1.5;
+    color: #94a3b8;
+}
+
+.insights-double-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.5rem;
+}
+
+.guidance-list {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    margin-top: 1.5rem;
+}
+
+.guidance-item {
+    padding-left: 1.25rem;
+    border-left: 3px solid #3b82f6;
+}
+
+.guidance-item strong {
+    display: block;
+    margin-bottom: 0.5rem;
+    color: #f8fafc;
+}
+
+.guidance-item p {
+    font-size: 0.9rem;
+    color: #94a3b8;
+    line-height: 1.5;
+}
+
+@media (max-width: 900px) {
+    .insights-double-grid {
+        grid-template-columns: 1fr;
+    }
+}
