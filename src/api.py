@@ -101,9 +101,9 @@ class ModelMetrics(BaseModel):
 
 # API Endpoints
 
-@app.get("/")
+@app.get("/api/status")
 async def root():
-    """Root endpoint"""
+    """Status endpoint"""
     return {
         "message": "Network Intrusion Detection System API",
         "version": "1.0.0",
