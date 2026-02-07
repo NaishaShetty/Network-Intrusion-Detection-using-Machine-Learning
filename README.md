@@ -8,6 +8,9 @@ This project combines a **high-performance FastAPI backend**, multiple state-of-
 
 ## 🔗 Demo & Access URLs
 
+> ⚠️ Demo Url
+https://network-intrusion-detection-system-gp15.onrender.com
+
 > ⚠️ Local Deployment (Default)
 
 - **Frontend Dashboard:**  
