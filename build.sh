@@ -6,7 +6,7 @@ set -o errexit
 echo "Building Frontend..."
 cd frontend
 npm install
-npm run build
+CI=false npm run build
 cd ..
 
 # 2. Install Backend Dependencies

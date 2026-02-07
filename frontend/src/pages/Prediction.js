@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
-import { Upload, FileText, AlertCircle, CheckCircle, Clock, BarChart as BarChartIcon, Search, ShieldAlert } from 'lucide-react';
+import { Upload, FileText, AlertCircle, Clock, BarChart as BarChartIcon, Search, ShieldAlert } from 'lucide-react';
 import { BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer, ReferenceLine, Cell } from 'recharts';
 import './Prediction.css';
 

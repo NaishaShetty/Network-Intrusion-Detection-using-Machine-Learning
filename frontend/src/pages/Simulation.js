@@ -1,5 +1,4 @@
 import React, { useState, useEffect, useRef } from 'react';
-import axios from 'axios';
 import { Radio, Play, Pause, AlertTriangle, ShieldCheck, Activity, Terminal } from 'lucide-react';
 import { LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer } from 'recharts';
 import './Simulation.css';
@@ -8,7 +7,6 @@ const Simulation = () => {
     const [isActive, setIsActive] = useState(false);
     const [traffic, setTraffic] = useState([]);
     const [alerts, setAlerts] = useState([]);
-    const [detectionRate, setDetectionRate] = useState(0);
     const [samplesProcessed, setSamplesProcessed] = useState(0);
     const timerRef = useRef(null);
 

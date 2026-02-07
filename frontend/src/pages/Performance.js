@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
-import { BarChart, Bar, LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip, Legend, ResponsiveContainer, Cell, RadarChart, Radar, PolarGrid, PolarAngleAxis, PolarRadiusAxis } from 'recharts';
-import { TrendingUp, Award, AlertCircle, ShieldAlert, Zap, Target } from 'lucide-react';
+import { BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, Legend, ResponsiveContainer, RadarChart, Radar, PolarGrid, PolarAngleAxis, PolarRadiusAxis } from 'recharts';
+import { Award, AlertCircle, ShieldAlert, Zap, Target } from 'lucide-react';
 import './Performance.css';
 
 const Performance = () => {
@@ -85,10 +85,6 @@ const Performance = () => {
 
     const selectedModelData = selectedModel ? dashboardData.models?.[selectedModel] : null;
 
-    const confusionMatrixData = selectedModelData?.confusion_matrix ? [
-        { name: 'True Normal', predicted_normal: selectedModelData.confusion_matrix[0]?.[0] || 0, predicted_attack: selectedModelData.confusion_matrix[0]?.[1] || 0 },
-        { name: 'True Attack', predicted_normal: selectedModelData.confusion_matrix[1]?.[0] || 0, predicted_attack: selectedModelData.confusion_matrix[1]?.[1] || 0 }
-    ] : [];
 
     // Radar chart data for selected model
     const radarData = selectedModelData?.metrics ? [
