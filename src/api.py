@@ -489,6 +489,12 @@ async def list_plots():
     }
 
 
+# Serve Frontend Static Files
+frontend_path = Path("frontend/build")
+if frontend_path.exists():
+    app.mount("/", StaticFiles(directory=str(frontend_path), html=True), name="frontend")
+
+
 if __name__ == "__main__":
     import uvicorn
     uvicorn.run(app, host=config.api_host, port=config.api_port)
